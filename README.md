@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("de.wanzl:hybridloc:1.0.0")
+    implementation("com.wanzl:hybridlocsdk:1.0.0")
 }
 ```
 

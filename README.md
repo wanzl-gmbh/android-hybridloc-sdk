@@ -1,4 +1,4 @@
-# android-hybridloc-sdk
+# Android Hybridloc SDK
 
 ## About
 
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.wanzl:hybridlocsdk:1.0.0")
+    implementation("com.wanzl:hybridlocsdk:1.1.0")
 }
 ```
 
@@ -60,14 +60,14 @@ We recommend loading the keys on every app start, to be always up to date with t
 hybridlocClient.openLock()
 ```
 
-The ```openLock()``` method initiates NFC tag listening. The method will return once a lock has been succesfully unlocked. If an error occurs (e.g., NFC tag was removed) a ```HybridlocClientException``` is thrown. After returning or an exception is thrown the app will automatically stop listening for NFC tags.
+The ```openLock()``` method initiates NFC tag listening. The method will return once a lock has been successfully unlocked. If an error occurs (e.g., NFC tag was removed) a ```HybridlocClientException``` is thrown. After returning or an exception is thrown the app will automatically stop listening for NFC tags.
 
 This method can trigger ```loadDigitalKeys()``` if either no keys are stored, or the keys have expired. Please be advised that by using this feature, it may happen that someone will try to open a lock before the keys are fetched. We recommend loading the keys beforehand by using ```loadDigitalKeys()``` for a smooth user experience.
 
 ### Cancel the lock opening process:
 
 ```kotlin
-hybridloclient.cancelLockOpening
+hybridloclient.cancelLockOpening()
 ```
 
 This method can be used to stop NFC tag listening. If ```cancelLockOpening()``` is called, ```openLock()``` will throw an ```HybridlocClientException```.
